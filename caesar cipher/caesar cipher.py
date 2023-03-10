@@ -1,12 +1,18 @@
+import art
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+print(art.logo)
 
 def encrypt(text, shift):
     encrypt_message = ""
     for i in text:
         position = alphabet.index(i)
         new_position = position + shift
-        if new_position > 25:
-            new_position = new_position-26
+        while True:
+            if new_position > 25:
+                new_position = new_position-26
+            else:
+                break
         new_letter = alphabet[new_position]
         encrypt_message += new_letter
     print("The encoded text is",encrypt_message)
