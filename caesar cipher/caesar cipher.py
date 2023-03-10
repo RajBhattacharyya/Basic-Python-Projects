@@ -6,24 +6,30 @@ print(art.logo)
 def encrypt(text, shift):
     encrypt_message = ""
     for i in text:
-        position = alphabet.index(i)
-        new_position = position + shift
-        while True:
-            if new_position > 25:
-                new_position = new_position-26
-            else:
-                break
-        new_letter = alphabet[new_position]
-        encrypt_message += new_letter
+        if i in alphabet:
+            position = alphabet.index(i)
+            new_position = position + shift
+            while True:
+                if new_position > 25:
+                    new_position = new_position-26
+                else:
+                    break
+            new_letter = alphabet[new_position]
+            encrypt_message += new_letter
+        else:
+            encrypt_message += i
     print("The encoded text is",encrypt_message)
 
 def decrypt(text, shift):
     decrypt_message = ""
     for i in text:
-        position = alphabet.index(i)
-        new_position = position - shift
-        new_letter = alphabet[new_position]
-        decrypt_message += new_letter
+        if i in alphabet:
+            position = alphabet.index(i)
+            new_position = position - shift
+            new_letter = alphabet[new_position]
+            decrypt_message += new_letter
+        else:
+            decrypt_message += i
     print("The decoded text is",decrypt_message)
 
 while True:
