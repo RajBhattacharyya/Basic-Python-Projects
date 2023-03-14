@@ -3,7 +3,6 @@ import art
 from game_data import data
 from replit import clear
 
-#print(len(data))
 choice1 = random.randint(0, len(data)-1)
 choice2 = random.randint(0, len(data)-1)
 while choice1 == choice2:
